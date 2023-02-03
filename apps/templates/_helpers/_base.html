@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% if title %}
+            {{ title }} |
+        {% endif %}
+            My Django Apps
+    </title>
+</head>
+<body>
+<p>My first Django project!</p>
+<div>
+    {% include "_helpers/_header.html" %}
+    {% block content %}
+        Hello!
+    {% endblock %}
+</div>
+</body>
+</html>

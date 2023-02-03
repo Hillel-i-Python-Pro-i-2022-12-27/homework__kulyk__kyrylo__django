@@ -2,8 +2,6 @@ from collections.abc import Iterator
 from random import randint
 from typing import NamedTuple
 from django.utils.crypto import get_random_string
-
-
 from faker import Faker
 
 
@@ -22,10 +20,10 @@ fake = Faker()
 
 
 def generate_user() -> User:
-    fake_nickname = fake.unique.user_name()
+    fake_nickname = f"{fake.unique.user_name()}_{fake.word()}"
     password = get_random_string(randint(6, 10))
     domain = fake.domain_name()
-    return User(nickname=fake_nickname, email=f"{fake_nickname}.{randint(10, 9999)}@{domain}", psw=password)
+    return User(nickname=fake_nickname, email=f"{fake_nickname}.{randint(10, 999)}@{domain}", psw=password)
 
 
 def generate_users(amount: int = 10) -> Iterator[User]:

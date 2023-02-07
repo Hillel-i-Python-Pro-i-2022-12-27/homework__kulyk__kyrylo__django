@@ -12,6 +12,3 @@ class ContactListView(ListView):
 
         context["title"] = "Contact List"
         return context
-
-
-# 1:46:12

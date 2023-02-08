@@ -20,7 +20,9 @@ class ContactDetailView(DetailView):
     model = Contact
 
     def get_context_data(self, **kwargs):
-        return super().get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
+        context["title"] = "Details Contact"
+        return context
 
 
 class ContactCreateView(CreateView):
@@ -31,6 +33,11 @@ class ContactCreateView(CreateView):
         "is_auto_generated",
     )
     success_url = reverse_lazy("phone_book:list")
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["title"] = "Create Contact"
+        return context
 
 
 class ContactUpdateView(UpdateView):
@@ -43,8 +50,18 @@ class ContactUpdateView(UpdateView):
     )
     success_url = reverse_lazy("phone_book:list")
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["title"] = "Update Contact"
+        return context
+
 
 class ContactDeleteView(DeleteView):
     model = Contact
 
     success_url = reverse_lazy("phone_book:list")
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["title"] = "Delete Contact"
+        return context

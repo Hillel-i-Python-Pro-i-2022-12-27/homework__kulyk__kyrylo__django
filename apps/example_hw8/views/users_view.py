@@ -1,6 +1,6 @@
 from django.views.generic import TemplateView
 
-from apps.users.services.generate_users import generate_users
+from apps.example_hw8.services.generate_users import generate_users
 
 
 class UsersView(TemplateView):

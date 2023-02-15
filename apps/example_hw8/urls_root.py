@@ -1,6 +1,6 @@
 from django.urls import path
 
-from apps.users import views
+from apps.example_hw8 import views
 
 app_name = "root"
 

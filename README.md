@@ -2,8 +2,8 @@
 ![example workflow](https://github.com/Hillel-i-Python-Pro-i-2022-12-27/homework__kulyk__kyrylo__hw5/actions/workflows/main-workflow.yml/badge.svg)
 ### Student [Hillel IT School](https://ithillel.ua/), I am from Odessa.
 ***
-## 📝Homework 8
-Django application generates and displays a list (nickname, email, password).
+## 📝Homework Django
+Completing homework tasks at Django framework.
 ***
 ### ▶️Run
 Run homework.

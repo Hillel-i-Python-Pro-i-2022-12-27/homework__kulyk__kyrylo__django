@@ -25,7 +25,8 @@ make init-dev
 ## 🐳Docker
 Use services in dockers.
 ### ▶️Run
-Make all actions needed for run homework from zero.
+Make all actions needed for run homework from zero,  
+making migrate and generate 100 contacts
 ```shell
 make d-homework-i-run
 ```
@@ -38,6 +39,18 @@ make d-stop
 Purge all data related with services
 ```shell
 make d-homework-i-purge
+```
+***
+## 🐳SuperUser
+### 🔩Create
+Create superuser with standard parameters (username, password, email)
+```shell
+make init-dev-i-create-superuser
+```
+### 🗑️Delete
+Delete all SuperUser
+```shell
+make init-dev-i-delete-superuser
 ```
 ***
 ## 🗄 DataBase

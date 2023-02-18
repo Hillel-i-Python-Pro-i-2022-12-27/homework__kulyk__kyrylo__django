@@ -42,7 +42,6 @@ d-homework-i-purge:
 d-run:
 	@make migrate && \
 	make init-dev-i-create-superuser && \
-	make django-i-generate-contacts-i-100 && \
 	COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 \
 		docker compose up --build
 

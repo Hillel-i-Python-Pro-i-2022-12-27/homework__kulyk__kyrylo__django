@@ -40,9 +40,7 @@ d-homework-i-purge:
 .PHONY: d-run
 # Just run
 d-run:
-	@make migrate && \
-	make init-dev-i-create-superuser && \
-	COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 \
+	@COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 \
 		docker compose up --build
 
 .PHONY: d-stop

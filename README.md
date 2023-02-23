@@ -26,7 +26,7 @@ make init-dev
 Use services in dockers.
 ### ▶️Run
 Make all actions needed for run homework from zero,  
-making migrate and generate 100 contacts
+making migrate
 ```shell
 make d-homework-i-run
 ```
@@ -54,6 +54,11 @@ make init-dev-i-delete-superuser
 ```
 ***
 ## 🗄 DataBase
+### ▶️Run db
+Run database for local dev
+```shell
+make d-run-i-local-dev
+```
 ### 🧳Make migration
 Created migration file
 ```shell

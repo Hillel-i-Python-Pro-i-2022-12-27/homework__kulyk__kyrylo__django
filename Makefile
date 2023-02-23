@@ -5,12 +5,17 @@ init-dev:
 	pip install --requirement requirements.txt && \
 	pre-commit install
 
+.PHONY: init-config-i-homework
+# Init configs for homework
+init-config-i-homework:
+	@cp .env.homework .env && \
+		cp docker-compose.override.homework.yml docker-compose.override.yml
+
 .PHONY: homework-i-run
 # Run homework.
 homework-i-run:
 	@make migrate && \
-	python manage.py runserver && \
-	make django-i-generate-contacts-i-100
+	python manage.py runserver
 
 .PHONY: homework-i-purge
 homework-i-purge:
@@ -30,7 +35,8 @@ pre-commit-run-all:
 .PHONY: d-homework-i-run
 # Make all actions needed for run homework from zero.
 d-homework-i-run:
-	@make d-run
+	@make init-config-i-homework && \
+	make d-run
 
 .PHONY: d-homework-i-purge
 # Make all actions needed for purge homework related data.
@@ -40,10 +46,18 @@ d-homework-i-purge:
 .PHONY: d-run
 # Just run
 d-run:
-	@make migrate && \
-	make init-dev-i-create-superuser && \
-	COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 \
-		docker compose up --build
+	@COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 \
+		COMPOSE_PROFILES=full_dev \
+		docker compose \
+		up --build
+
+.PHONY: d-run-i-local-dev
+# Just run
+d-run-i-local-dev:
+	@COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 \
+		COMPOSE_PROFILES=local_dev \
+		docker compose \
+		up --build
 
 .PHONY: d-stop
 # Stop services

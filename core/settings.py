@@ -48,6 +48,7 @@ LOCAL_APPS = [
     "apps.base",
     "apps.example_hw8",
     "apps.phone_book",
+    "apps.users",
 ]
 
 THIRD_PARTY_APPS = []
@@ -65,6 +66,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = "core.urls"
+
+AUTH_USER_MODEL = "users.User"
 
 TEMPLATES = [
     {

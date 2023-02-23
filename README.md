@@ -2,8 +2,8 @@
 ![example workflow](https://github.com/Hillel-i-Python-Pro-i-2022-12-27/homework__kulyk__kyrylo__hw5/actions/workflows/main-workflow.yml/badge.svg)
 ### Student [Hillel IT School](https://ithillel.ua/), I am from Odessa.
 ***
-## 📝Homework 8
-Django application generates and displays a list (nickname, email, password).
+## 📝Homework Django
+Completing homework tasks at Django framework.
 ***
 ### ▶️Run
 Run homework.
@@ -25,7 +25,8 @@ make init-dev
 ## 🐳Docker
 Use services in dockers.
 ### ▶️Run
-Make all actions needed for run homework from zero.
+Make all actions needed for run homework from zero,  
+making migrate and generate 100 contacts
 ```shell
 make d-homework-i-run
 ```
@@ -38,6 +39,18 @@ make d-stop
 Purge all data related with services
 ```shell
 make d-homework-i-purge
+```
+***
+## 🐳SuperUser
+### 🔩Create
+Create superuser with standard parameters (username, password, email)
+```shell
+make init-dev-i-create-superuser
+```
+### 🗑️Delete
+Delete all SuperUser
+```shell
+make init-dev-i-delete-superuser
 ```
 ***
 ## 🗄 DataBase

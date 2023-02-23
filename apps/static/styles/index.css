@@ -1,20 +1,24 @@
-.my-element-box{
+.my-element-box {
     display: flex;
     flex-flow: row;
-    flex-wrap: wrap;
-
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-
     width: fit-content;
+    align-content: center;
+    flex-direction: row;
+    margin: auto;
+    margin-inline: 5px;
 }
 
 .my-element-style {
     display: flex;
+    flex-direction: column;
     flex-flow: row;
-
+    flex-wrap: nowrap;
+    align-items: flex-start;
     justify-content: space-between;
-    align-items: center;
+
 
     width: fit-content;
 

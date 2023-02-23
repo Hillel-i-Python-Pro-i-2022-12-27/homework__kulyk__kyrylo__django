@@ -1,25 +1,25 @@
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-info">
-        <ul class="navbar-nav">
+    <nav class="navbar navbar-light navbar" style="background-color: rgba(119,144,241,0.87);">
+        <ul class="navbar-nav my-element-box">
             <div id="logo">
                 <object
                     type="image/svg+xml"
-                    data="/static/logo/logo.svg">
+                    data="/static/logo.svg">
                     <img
-                        src="/logo/logo.svg"
+                        src="/static/logo.svg"
                         id="logo"
                         alt="">
                 </object>
             </div>
             <div class="col my-element-box">
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url "root:index" %}">Main page</a>
+                    <a class="nav-link" style="margin-inline: 15px;" href="{% url "root:index" %}">Main page</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url "example_hw8:users_with_amount" amount=10 %}">Users list with amount</a>
+                    <a class="nav-link" style="margin-inline: 15px;" href="{% url "example_hw8:users_with_amount" amount=10 %}">Users list with amount</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url "phone_book:list" %}">Contacts</a>
+                    <a class="nav-link" style="margin-inline: 15px;" href="{% url "phone_book:list" %}">Contacts</a>
                 </li>
             </div>
         </ul>

@@ -3,7 +3,7 @@ faker==17.0.0
 
 # [code_style]-[BEGIN]
 # Pre-commit hook.
-pre-commit==3.0.4
+pre-commit==3.1.0
 # Upgrade syntax.
 pyupgrade==3.3.1
 # Formatter. Apply codestyle.

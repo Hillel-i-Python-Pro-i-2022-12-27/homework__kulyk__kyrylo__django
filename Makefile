@@ -9,13 +9,12 @@ init-dev:
 # Init configs for homework
 init-config-i-homework:
 	@cp .env.homework .env && \
-		cp docker-compose.override.homework.yml docker-compose.override.yml
+	cp docker-compose.override.homework.yml docker-compose.override.yml
 
 .PHONY: homework-i-run
 # Run homework.
 homework-i-run:
-	@make migrate && \
-	python manage.py runserver
+	@python manage.py runserver
 
 .PHONY: homework-i-purge
 homework-i-purge:

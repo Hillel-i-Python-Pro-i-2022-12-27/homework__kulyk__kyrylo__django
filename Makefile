@@ -9,8 +9,7 @@ init-dev:
 # Run homework.
 homework-i-run:
 	@make migrate && \
-	python manage.py runserver && \
-	make django-i-generate-contacts-i-100
+	python manage.py runserver
 
 .PHONY: homework-i-purge
 homework-i-purge:
@@ -40,7 +39,7 @@ d-homework-i-purge:
 .PHONY: d-run
 # Just run
 d-run:
-	@python manage.py migrate && \
+  @python manage.py migrate && \
 	COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 \
 		docker compose up --build
 

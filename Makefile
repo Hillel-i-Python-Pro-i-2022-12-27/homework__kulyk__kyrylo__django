@@ -5,12 +5,6 @@ init-dev:
 	pip install --requirement requirements.txt && \
 	pre-commit install
 
-.PHONY: init-config-i-homework
-# Init configs for homework
-init-config-i-homework:
-	@cp .env.homework .env && \
-		cp docker-compose.override.homework.yml docker-compose.override.yml
-
 .PHONY: homework-i-run
 # Run homework.
 homework-i-run:
@@ -35,8 +29,7 @@ pre-commit-run-all:
 .PHONY: d-homework-i-run
 # Make all actions needed for run homework from zero.
 d-homework-i-run:
-	@make init-config-i-homework && \
-	make d-run
+	@make d-run
 
 .PHONY: d-homework-i-purge
 # Make all actions needed for purge homework related data.
@@ -46,18 +39,9 @@ d-homework-i-purge:
 .PHONY: d-run
 # Just run
 d-run:
-	@COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 \
-		COMPOSE_PROFILES=full_dev \
-		docker compose \
-		up --build
-
-.PHONY: d-run-i-local-dev
-# Just run
-d-run-i-local-dev:
-	@COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 \
-		COMPOSE_PROFILES=local_dev \
-		docker compose \
-		up --build
+  @python manage.py migrate && \
+	COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 \
+		docker compose up --build
 
 .PHONY: d-stop
 # Stop services

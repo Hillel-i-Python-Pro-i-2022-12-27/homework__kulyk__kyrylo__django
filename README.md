@@ -2,6 +2,7 @@
 ![example workflow](https://github.com/Hillel-i-Python-Pro-i-2022-12-27/homework__kulyk__kyrylo__hw5/actions/workflows/main-workflow.yml/badge.svg)
 ### Student [Hillel IT School](https://ithillel.ua/), I am from Odessa.
 ***
+
 ## 📝Homework Django framework
 Completing homework tasks at Django framework.
 ***
@@ -22,6 +23,7 @@ Install dependencies and register pre-commit.
 make init-dev
 ```
 ***
+
 ## 🐳Docker
 Use services in dockers.
 ### ▶️Run
@@ -41,6 +43,7 @@ Purge all data related with services
 make d-homework-i-purge
 ```
 ***
+
 ## 🐳SuperUser
 ### 🔩Create
 Create superuser with standard parameters (username, password, email)
@@ -53,6 +56,7 @@ Delete all SuperUser
 make init-dev-i-delete-superuser
 ```
 ***
+
 ## 🗄 DataBase
 ### 🧳Make migration
 Created migration file

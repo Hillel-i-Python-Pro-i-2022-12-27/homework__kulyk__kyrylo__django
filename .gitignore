@@ -160,10 +160,8 @@ cython_debug/
 
 .idea/
 
-
-.env
+db/*
+!db/.gitkeep
 
 media/*
 !media/.gitkeep
-
-docker-compose.override.yml

@@ -54,11 +54,6 @@ make init-dev-i-delete-superuser
 ```
 ***
 ## 🗄 DataBase
-### ▶️Run db
-Run database for local dev
-```shell
-make d-run-i-local-dev
-```
 ### 🧳Make migration
 Created migration file
 ```shell

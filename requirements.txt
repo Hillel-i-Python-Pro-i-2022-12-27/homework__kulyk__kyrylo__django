@@ -1,9 +1,9 @@
 # For name generation.
-faker==16.6.1
+faker==17.3.0
 
 # [code_style]-[BEGIN]
 # Pre-commit hook.
-pre-commit==3.0.3
+pre-commit==3.1.0
 # Upgrade syntax.
 pyupgrade==3.3.1
 # Formatter. Apply codestyle.
@@ -15,4 +15,4 @@ autoflake==2.0.1
 # [code_style]-[END]
 
 # Core.
-django==4.1.6
+django==4.1.7

@@ -17,16 +17,10 @@ COPY --chown=${USER} requirements.txt requirements.txt
 RUN pip install --upgrade pip && \
     pip install --requirement requirements.txt
 
-COPY --chown=${USER} --chmod=555 ./docker/app/entrypoint.sh /entrypoint.sh
-COPY --chown=${USER} --chmod=555 ./docker/app/start.sh /start.sh
-
-COPY --chown=${USER} ./Makefile Makefile
 COPY --chown=${USER} ./manage.py manage.py
 COPY --chown=${USER} ./core core
 COPY --chown=${USER} ./apps apps
 
 USER ${USER}
 
-ENTRYPOINT ["/entrypoint.sh"]
-
-CMD ["/start.sh"]
+ENTRYPOINT ["python", "manage.py", "runserver", "0.0.0.0:8000"]

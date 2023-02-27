@@ -2,47 +2,35 @@
 
 {% block content %}
     <a href="{% url "phone_book:create" %}">
-        <button type="button" class="btn btn-success">
+        <button type="button" style="font: bold 14px Arial;">
             Create new contact
         </button>
     </a>
 
-    <ul>
+    <ol>
         {% for contact in object_list %}
-            <li class="row my-element-box">
-                <div class="col my-element-style">
-                    <div class="my-avatar">
-                        {% if contact.avatar %}
-                            <img src="{{ contact.avatar.url }}" alt="Avatar">
-                        {% endif %}
-                    </div>
-
-                    <div class="my-element-content">
-                        <p>Name: {{ contact.name }}</p>
-                        <p>Phone number: {{ contact.phone_number }}</p>
-                        <p>Contact created at - {{ contact.created_at }}</p>
-                        <p>Contact modified at - {{ contact.modified_at }}</p>
-                    </div>
-
-                    <div class="my-element-controls">
-                        <a href="{% url "phone_book:update" pk=contact.id %}">
-                            <button type="submit" class="btn btn-primary">
-                                Edit
-                            </button>
-                        </a>
-                        <a href="{% url "phone_book:delete" pk=contact.id %}">
-                            <button type="submit" class="btn btn-danger">
-                                Delete
-                            </button>
-                        </a>
-                        <a href="{% url "phone_book:details" pk=contact.id %}">
-                            <button type="submit" class="btn btn-info">
-                                Details
-                            </button>
-                        </a>
-                    </div>
-                </div>
+            <li>
+                <p>Name: {{ contact.name }}</p>
+                <p>Phone number: {{ contact.phone_number }}</p>
+                <p>Contact created at - {{ contact.created_at }}</p>
+                <p>Contact modified at - {{ contact.modified_at }}</p>
+                <a href="{% url "phone_book:update" pk=contact.id %}">
+                    <button>
+                        Edit
+                    </button>
+                </a>
+                <a href="{% url "phone_book:delete" pk=contact.id %}">
+                    <button>
+                        Delete
+                    </button>
+                </a>
+                <a href="{% url "phone_book:details" pk=contact.id %}">
+                    <button>
+                        Details
+                    </button>
+                </a>
+                <p>----------------------------------------</p>
             </li>
         {% endfor %}
-    </ul>
+    </ol>
 {% endblock %}

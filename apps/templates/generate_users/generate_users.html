@@ -3,12 +3,11 @@
 {% block content %}
     <ol>
         {% for user in users %}
-            <li class="row">
-                <div class="col my-element-style">
-                    <p>Username: {{ user.nickname }}</p>
-                    <p>Email: {{ user.email }}</p>
-                    <p>Password: {{ user.password }}</p>
-                </div>
+            <li>
+                <p>Username: {{ user.nickname }}</p>
+                <p>Email: {{ user.email }}</p>
+                <p>Password: {{ user.password }}</p>
+                <p>----------</p>
             </li>
         {% endfor %}
     </ol>

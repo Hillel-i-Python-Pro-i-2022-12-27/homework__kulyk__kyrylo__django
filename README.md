@@ -25,7 +25,8 @@ make init-dev
 ## 🐳Docker
 Use services in dockers.
 ### ▶️Run
-Make all actions needed for run homework from zero.
+Make all actions needed for run homework from zero,  
+making migrate and generate 100 contacts
 ```shell
 make d-homework-i-run
 ```

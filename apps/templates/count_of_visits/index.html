@@ -1,0 +1,10 @@
+{% extends "_helpers/_base.html" %}
+
+{% block content %}
+    <div class="flex-column my-element-style">
+        <p>Session ID: {{ session_id }}</p>
+        <p>Counter of visits: {{ count_of_visits }}</p>
+        <p>Time of visit: {{ time }}</p>
+        <p>Time of previous visit: {{ time_of_previous_visit }}</p>
+    </div>
+{% endblock %}

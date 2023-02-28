@@ -2,7 +2,7 @@
 ![example workflow](https://github.com/Hillel-i-Python-Pro-i-2022-12-27/homework__kulyk__kyrylo__hw5/actions/workflows/main-workflow.yml/badge.svg)
 ### Student [Hillel IT School](https://ithillel.ua/), I am from Odessa.
 ***
-## 📝Homework Django
+## 📝Homework Django framework
 Completing homework tasks at Django framework.
 ***
 ### ▶️Run
@@ -26,7 +26,7 @@ make init-dev
 Use services in dockers.
 ### ▶️Run
 Make all actions needed for run homework from zero,  
-making migrate and generate 100 contacts
+making migrate
 ```shell
 make d-homework-i-run
 ```
@@ -54,6 +54,11 @@ make init-dev-i-delete-superuser
 ```
 ***
 ## 🗄 DataBase
+### ▶️Run db
+Run database for local dev
+```shell
+make d-run-i-local-dev
+```
 ### 🧳Make migration
 Created migration file
 ```shell

@@ -3,7 +3,7 @@ faker==17.3.0
 
 # [code_style]-[BEGIN]
 # Pre-commit hook.
-pre-commit==3.1.0
+pre-commit==3.1.1
 # Upgrade syntax.
 pyupgrade==3.3.1
 # Formatter. Apply codestyle.
@@ -16,3 +16,15 @@ autoflake==2.0.1
 
 # Core.
 django==4.1.7
+
+# For images
+Pillow==9.4.0
+
+# For forms
+crispy-bootstrap5==0.7
+
+# For enviroment variables and configuration.
+django-environ==0.9.0
+
+# For PostgreSQL.
+psycopg2-binary==2.9.5

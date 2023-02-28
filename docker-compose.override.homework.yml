@@ -1,0 +1,14 @@
+version: '3.8'
+
+
+services:
+  app:
+    volumes:
+      - ./media:/wd/media:rw
+    ports:
+      - "8000:8000"
+    user: "1000"
+
+  postgres:
+    ports:
+      - "5432:5432"

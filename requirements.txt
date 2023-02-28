@@ -16,3 +16,9 @@ autoflake==2.0.1
 
 # Core.
 django==4.1.7
+
+# For images
+Pillow==9.4.0
+
+# For forms
+crispy-bootstrap5==0.7

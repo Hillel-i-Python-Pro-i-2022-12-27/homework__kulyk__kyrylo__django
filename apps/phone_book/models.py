@@ -9,6 +9,13 @@ class Contact(models.Model):
 
     is_auto_generated = models.BooleanField(default=False)
 
+    avatar = models.ImageField(
+        max_length=255,
+        upload_to="contacts/contact/avatar/",
+        blank=True,
+        null=True,
+    )
+
     def __str__(self) -> str:
         return f"{self.name} - phone: {self.phone_number}"
 

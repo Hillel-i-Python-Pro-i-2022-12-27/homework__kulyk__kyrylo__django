@@ -30,7 +30,8 @@ pre-commit-run-all:
 .PHONY: d-homework-i-run
 # Make all actions needed for run homework from zero.
 d-homework-i-run:
-	@make d-run
+	@make migrate && \
+	make d-run
 
 .PHONY: d-homework-i-purge
 # Make all actions needed for purge homework related data.

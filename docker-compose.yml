@@ -6,6 +6,7 @@ services:
     build: .
     volumes:
       - ./db:/wd/db:rw
+      - ./media:/wd/media:rw
     ports:
       - "8000:8000"
     user: '1000'

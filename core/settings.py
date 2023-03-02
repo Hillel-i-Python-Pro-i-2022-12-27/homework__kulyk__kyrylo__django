@@ -54,6 +54,7 @@ LOCAL_APPS = [
     "apps.example_hw8",
     "apps.phone_book",
     "apps.users",
+    "apps.count_of_visits",
 ]
 
 THIRD_PARTY_APPS = [

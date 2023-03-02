@@ -19,12 +19,11 @@ class CountOfVisitsView(TemplateView):
         session[KEY__COUNT_OF_VISITS] = count_of_visits
 
         time = str(datetime.datetime.now().strftime("%d.%m.%Y | %H:%M:%S"))
-        time_of_previous_visit = session.get(KEY__TIME_OF_PREVIOUS_VISIT, 0)
+        time_of_previous_visit = session.get(KEY__TIME_OF_PREVIOUS_VISIT, "Your first visit!")
         session[KEY__TIME_OF_PREVIOUS_VISIT] = time
 
         context = super().get_context_data(**kwargs)
         context["title"] = "Count of visits"
-        context["session_id"] = session.session_key
         context["count_of_visits"] = count_of_visits
         context["time"] = time
         context["time_of_previous_visit"] = time_of_previous_visit

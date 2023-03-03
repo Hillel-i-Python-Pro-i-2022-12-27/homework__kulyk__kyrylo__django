@@ -1,0 +1,19 @@
+{% extends "_helpers/_base.html" %}
+
+{% block content %}
+    <div class="col my-element-style">
+        <div class="my-avatar">
+            {% if user.avatar %}
+                <img src="{{ user.avatar.url }}" alt="Avatar">
+            {% endif %}
+        </div>
+    </div>
+        <p>User name: {{ object.username }}</p>
+        <p>First name: {{ object.first_name }}</p>
+        <p>Last name: {{ object.last_name }}</p>
+        <p>Email: {{ object.email }}</p>
+        <p>Last login: {{ object.last_login }}</p>
+        <p>Date registration: {{ object.date_joined }}</p>
+    <a type="button" class="btn btn-primary" href="{% url "users:update" pk=object.id %}">Edit</a>
+    <a type="button" class="btn btn-warning" href="{% url "users:delete" pk=object.id %}">Delete my account</a>
+{% endblock %}

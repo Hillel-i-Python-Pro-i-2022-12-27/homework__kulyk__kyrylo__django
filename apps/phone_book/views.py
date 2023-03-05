@@ -1,4 +1,6 @@
+from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
+from django.utils.decorators import method_decorator
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 
 from apps.phone_book.models import Contact
@@ -25,6 +27,7 @@ class ContactDetailView(DetailView):
         return context
 
 
+@method_decorator(login_required, name="dispatch")
 class ContactCreateView(CreateView):
     model = Contact
     fields = (
@@ -41,6 +44,7 @@ class ContactCreateView(CreateView):
         return context
 
 
+@method_decorator(login_required, name="dispatch")
 class ContactUpdateView(UpdateView):
     model = Contact
     fields = (
@@ -58,6 +62,7 @@ class ContactUpdateView(UpdateView):
         return context
 
 
+@method_decorator(login_required, name="dispatch")
 class ContactDeleteView(DeleteView):
     model = Contact
 

@@ -1,0 +1,25 @@
+{% extends "_helpers/_base.html" %}
+
+{% block content %}
+    <a href="{% url "logs:logs_list" %}">
+        <button type="button" class="btn btn-success">
+            All Logs
+        </button>
+    </a>
+    <ol>
+        {% for log in object_list %}
+            <li>
+                <div class="col my-element-style">
+                    <div class="my-element-content">
+                        <p>ID: {{ log.id }}</p>
+                        <p>Request path: {{ log.request_path }}</p>
+                        <p>User: {{ log.user }}</p>
+                        <p>Session id: {{ log.session_id }}</p>
+                        <p>Counter: {{ log.counter }}</p>
+                        <p>Created time: {{ log.created_time }}</p>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ol>
+{% endblock %}

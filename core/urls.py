@@ -25,6 +25,7 @@ urlpatterns = [
     path("phone_book/", include("apps.phone_book.urls")),
     path("count-of-visits", include("apps.count_of_visits.urls")),
     path("users/", include("apps.users.urls")),
+    path("logs/", include("apps.middleware_requests.urls")),
     path("", include("apps.example_hw8.urls_root")),
 ]
 

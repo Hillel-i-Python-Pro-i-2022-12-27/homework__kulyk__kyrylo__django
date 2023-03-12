@@ -1,11 +1,7 @@
 {% extends "_helpers/_base.html" %}
 
 {% block content %}
-    <a href="{% url "logs:logs_list" %}">
-        <button type="button" class="btn btn-success">
-            All Logs
-        </button>
-    </a>
+    <p>Count All Logs: {{ count_all_logs }}</p>
     <ol>
         {% for log in object_list %}
             <li>

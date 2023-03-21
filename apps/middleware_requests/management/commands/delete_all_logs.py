@@ -16,8 +16,5 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         logger = logging.getLogger("django")
         queryset = HttpRequestsLog.objects.all()
-        logger.info(f"Current number of entries in the user activity log: {queryset.count()}")
-        queryset_for_delete = queryset
-        total_deleted, details = queryset_for_delete.delete()
-        logger.info(f"Total deleted: {total_deleted}, details: {details}")
-        logger.info(f"Number of entries in the user activity log after deletion: {queryset.count()}")
+        total_deleted, details = queryset.delete()
+        logger.info(f"Deleted {total_deleted} entries in the user activity log.")

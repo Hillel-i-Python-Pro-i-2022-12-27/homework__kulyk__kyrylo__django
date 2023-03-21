@@ -9,8 +9,16 @@
                     <div class="my-element-content">
                         <p>ID: {{ log.id }}</p>
                         <p>Request path: {{ log.request_path }}</p>
-                        <p>User: {{ log.user }}</p>
-                        <p>Session id: {{ log.session_id }}</p>
+                        {% if log.user %}
+                            <p>User: {{ log.user }}</p>
+                        {% else %}
+                            <p>User: Unknown user</p>
+                        {% endif %}
+                        {% if log.session_id %}
+                            <p>Session id: {{ log.session_id }}</p>
+                        {% else %}
+                            <p>Session id: Unknown session</p>
+                        {% endif %}
                         <p>Counter: {{ log.counter }}</p>
                         <p>Created time: {{ log.created_time }}</p>
                     </div>

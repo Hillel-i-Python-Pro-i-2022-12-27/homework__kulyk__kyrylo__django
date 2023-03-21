@@ -9,23 +9,27 @@ class LoggingRequestsMiddleware:
 
     def __call__(self, request):
         response = self.get_response(request)
-        if HttpRequestsLog.objects.filter(
-            request_path=request.build_absolute_uri(),
-            session_id=request.session.session_key,
-            user_id=request.user.id,
+        request_path = request.build_absolute_uri()
+        session_id = request.session.session_key
+        user_id = request.user.id
+        http_requests_log = HttpRequestsLog.objects
+        if http_requests_log.filter(
+            request_path=request_path,
+            session_id=session_id,
+            user_id=user_id,
         ).exists():
-            result = HttpRequestsLog.objects.get(
-                request_path=request.build_absolute_uri(),
-                session_id=request.session.session_key,
-                user_id=request.user.id,
+            result = http_requests_log.get(
+                request_path=request_path,
+                session_id=session_id,
+                user_id=user_id,
             )
             result.counter += 1
             result.save()
         else:
-            HttpRequestsLog.objects.create(
-                request_path=request.build_absolute_uri(),
-                session_id=request.session.session_key,
-                user_id=request.user.id,
+            http_requests_log.create(
+                request_path=request_path,
+                session_id=session_id,
+                user_id=user_id,
                 counter=1,
             )
         return response

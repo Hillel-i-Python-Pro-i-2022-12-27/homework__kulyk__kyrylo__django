@@ -1,0 +1,29 @@
+{% extends "_helpers/_base.html" %}
+
+{% block content %}
+    <p>Count All Logs: {{ count_all_logs }}</p>
+    <ol>
+        {% for log in object_list %}
+            <li>
+                <div class="col my-element-style">
+                    <div class="my-element-content">
+                        <p>ID: {{ log.id }}</p>
+                        <p>Request path: {{ log.request_path }}</p>
+                        {% if log.user %}
+                            <p>User: {{ log.user }}</p>
+                        {% else %}
+                            <p>User: Unknown user</p>
+                        {% endif %}
+                        {% if log.session_id %}
+                            <p>Session id: {{ log.session_id }}</p>
+                        {% else %}
+                            <p>Session id: Unknown session</p>
+                        {% endif %}
+                        <p>Counter: {{ log.counter }}</p>
+                        <p>Created time: {{ log.created_time }}</p>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ol>
+{% endblock %}
